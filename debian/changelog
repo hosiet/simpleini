@@ -1,0 +1,5 @@
+libsimpleini (4.17+dfsg-1) unstable; urgency=medium
+
+  * Initial release (Closes: #884277)
+
+ -- Yangfl <mmyangfl@gmail.com>  Wed, 13 Dec 2017 16:33:54 +0800

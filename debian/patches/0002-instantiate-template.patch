@@ -1,0 +1,41 @@
+diff --git a/SimpleIni.h b/SimpleIni.cpp
+similarity index 99%
+rename from SimpleIni.h
+rename to SimpleIni.cpp
+index 047c809..f93fdbf 100644
+--- a/SimpleIni.h
++++ b/SimpleIni.cpp
+@@ -3407,21 +3407,21 @@ public:
+ //                                  TYPE DEFINITIONS
+ // ---------------------------------------------------------------------------
+ 
+-typedef CSimpleIniTempl<char,
+-    SI_NoCase<char>,SI_ConvertA<char> >                 CSimpleIniA;
+-typedef CSimpleIniTempl<char,
+-    SI_Case<char>,SI_ConvertA<char> >                   CSimpleIniCaseA;
++template class CSimpleIniTempl<char,
++    SI_NoCase<char>,SI_ConvertA<char> >                 ;
++template class CSimpleIniTempl<char,
++    SI_Case<char>,SI_ConvertA<char> >                   ;
+ 
+ #if defined(SI_CONVERT_ICU)
+-typedef CSimpleIniTempl<UChar,
+-    SI_NoCase<UChar>,SI_ConvertW<UChar> >               CSimpleIniW;
+-typedef CSimpleIniTempl<UChar,
+-    SI_Case<UChar>,SI_ConvertW<UChar> >                 CSimpleIniCaseW;
++template class CSimpleIniTempl<UChar,
++    SI_NoCase<UChar>,SI_ConvertW<UChar> >               ;
++template class CSimpleIniTempl<UChar,
++    SI_Case<UChar>,SI_ConvertW<UChar> >                 ;
+ #else
+-typedef CSimpleIniTempl<wchar_t,
+-    SI_NoCase<wchar_t>,SI_ConvertW<wchar_t> >           CSimpleIniW;
+-typedef CSimpleIniTempl<wchar_t,
+-    SI_Case<wchar_t>,SI_ConvertW<wchar_t> >             CSimpleIniCaseW;
++template class CSimpleIniTempl<wchar_t,
++    SI_NoCase<wchar_t>,SI_ConvertW<wchar_t> >           ;
++template class CSimpleIniTempl<wchar_t,
++    SI_Case<wchar_t>,SI_ConvertW<wchar_t> >             ;
+ #endif
+ 
+ #ifdef _UNICODE

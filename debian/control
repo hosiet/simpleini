@@ -1,0 +1,35 @@
+Source: libsimpleini
+Priority: optional
+Maintainer: Yangfl <mmyangfl@gmail.com>
+Uploaders:
+ Boyuan Yang <073plan@gmail.com>,
+Build-Depends:
+ debhelper (>= 10),
+ cmake,
+ libicu-dev,
+Standards-Version: 4.1.2
+Section: libs
+Homepage: https://github.com/brofield/simpleini
+Vcs-Git: https://github.com/yangfl/simpleini.git
+Vcs-Browser: https://github.com/yangfl/simpleini
+
+Package: libsimpleini-dev
+Section: libdevel
+Architecture: any
+Depends: libsimpleini1 (= ${binary:Version}), ${misc:Depends}
+Description: Cross-platform C++ library for INI-style configuration files (development files)
+ A cross-platform library that provides a simple API to read and write
+ INI-style configuration files. It supports data files in ASCII, MBCS and
+ Unicode. It is designed explicitly to be portable to any platform and has been
+ tested on Windows, WinCE and Linux.
+ .
+ This package contains the header files.
+
+Package: libsimpleini1
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Cross-platform C++ library for INI-style configuration files
+ A cross-platform library that provides a simple API to read and write
+ INI-style configuration files. It supports data files in ASCII, MBCS and
+ Unicode. It is designed explicitly to be portable to any platform and has been
+ tested on Windows, WinCE and Linux.

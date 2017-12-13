@@ -1,0 +1,30 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+new file mode 100644
+index 0000000..fff107a
+--- /dev/null
++++ b/CMakeLists.txt
+@@ -0,0 +1,24 @@
++cmake_minimum_required(VERSION 3.0.0)
++project(simpleini)
++
++include(GNUInstallDirs)
++
++find_package(ICU COMPONENTS uc REQUIRED)
++
++file(GLOB SOURCES "SimpleIni.cpp")
++file(GLOB HEADERS "SimpleIni.h")
++
++add_library(simpleini SHARED ${SOURCES})
++set_property(TARGET simpleini PROPERTY VERSION "4.17")
++set_property(TARGET simpleini PROPERTY SOVERSION 1 )
++
++target_compile_definitions(simpleini PRIVATE SI_CONVERT_ICU SI_SUPPORT_IOSTREAMS)
++target_link_libraries(simpleini ${ICU_LIBRARIES})
++
++install(TARGETS simpleini DESTINATION "${CMAKE_INSTALL_LIBDIR}")
++install(FILES ${HEADERS} DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")
++
++add_executable(testsi test1.cpp testsi.cpp)
++target_link_libraries(testsi simpleini)
++add_test(simpleini testsi
++         COMMAND testsi -u -m -l test1-input.ini)
